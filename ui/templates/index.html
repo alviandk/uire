@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block current_uire %}active{% endblock %}
+{% block content %}
+
+<div class="row padding-60">
+
+  <div class="col-lg-8 offset-lg-2">
+    <h1>Isi UIRE</h1>
+    {% if message %}
+      <div class="alert alert-success" role="alert">
+        Sukses menambahkan survey<br>
+        <a href="\generate" class="blue">Generate Cluster >></a>
+      </div>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+
+      <!--{% for field in identity_form %}-->
+        <!--<div class="form-group">-->
+          <!--<label>{{ field.label_tag }}</label>-->
+          <!--{{ field.errors }}-->
+          <!--{{field}}-->
+        <!--</div>-->
+      <!--{% endfor %}-->
+      {% for field in survey_form %}
+        <div class="form-group">
+          <label>{{ field.label_tag }}</label>
+          {{ field.errors }}
+          {% if field.html_name == 'question_6' or field.html_name == 'question_15'%}{% else %}<br>{% endif %}
+          {% for choice in field %}
+            <div class="form-check {% if field.html_name == 'question_6' or field.html_name == 'question_15'%}{% else %}form-check-inline{% endif %}">
+              {{ choice.tag }}
+              <label class="form-check-label" >
+                {{ choice.choice_label }}
+              </label>
+            </div>
+          {% endfor %}
+          {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+  </div>
+  <!-- /.col-lg-9 -->
+
+</div>
+<!-- /.row -->
+{% endblock content %}
