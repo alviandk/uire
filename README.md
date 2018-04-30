@@ -1,44 +1,37 @@
-# Applikasi Uire
-> Aplikasi peng-clusteran hasil input sirvey uire dengan algoritma [art] 
+# Uire Application
+> Clustering application of uire survey input with [art] algorithm
 
 [art]: https://en.wikipedia.org/wiki/Algorithmic_art
 
-## Instalasi
-- clone repo ini ke komputer anda `git clone https://github.com/alviandk/uire.git`.
-- masuk ke direktori projek dan install requirement yang diperlukan `pip install -r requirements.txt`.
-- jalankan server dengan perintah `python manage.py runserver`
-- buka pada browser http://localhost:8000/
+## Installation
+- clone this repo to your computer `git clone https://github.com/alviandk/uire.git`.
+- go to the project directory and install the requirement `pip install -r requirements.txt`.
+- run the server with the command `python manage.py runserver`
+- open in browser http://localhost:8000/
 
-## Petunjuk pemakaian untuk pengguna
+## User Guide
 
-Terdapat 3 fitur utama pada aplikasi ini:
-- Isi Uire
+There are 3 main features in this app:
+- Submit Uire Survey
 - Generate Cluster
-- Download Aplikasi XUL
+- Download XUL Application
 
 ![](img/main_menu.png)
 
-- Isi Uire
+- Submit Uire Survey
 
-Menu isi Uire untuk input data survey oleh pengguna. 
-User memilih pilihan jawaban dari setiap pertanyaan, setelah 15 pertanyaan terisi pengguna melakukan submit.
-Pengisian survey dapat dilakukan oleh banyak pengguna.
+This feature is to input the uire survey data by the user.
+Users choose the answer option of each question, after 15 questions filled and then users submit it.
+Survey filling can be done by many users.
 ![](img/isi_uire.png)
 
 - Generate Cluster
 
-Setelah jumlah survey yang dilakukan pengguna cukup, bisa dilakukan penggenerasian cluster untuk mengetahui ada berapa 
-kategori pengguna berdasarkan jawaban surveynya. Masukkan nilai limit koefisien tanimoto dengan range nilai antara 0 sampai 1.
-Setelah itu tekan tombol `Generate` untuk menghasilkan cluster.
+After the number of surveys has been enough, cluster generation can be done to find out how many categories of users based on the answers survey. Enter the value of tanimoto coefficient limit with a range of values between 0 and 1.
+After that press the `Generate` button to generate the cluster.
 ![](img/generate_cluster.png)
 
-- Download Aplikasi XUL
+- Download XUL Application
 
-Cluster yang sudah digenerate dapat di download file xul nya dan dijalankan dengan xulrunner untuk menghasilkan user interface
-uire sesuai dengan kategori cluster tersebut.
+The cluster that has been generated can be downloaded in xul file and run with xulrunner to generate uire user interface in accordance with the cluster category.
 ![](img/download_xul.png)
-
-
-
-
-
